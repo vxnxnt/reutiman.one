@@ -1,0 +1,55 @@
+details.menu {
+    padding: 1em 0.5em 0;
+    border-bottom: 1px solid #aaa;
+    text-align: center;
+    width: fit-content;
+    margin: auto;
+    transition: 200ms ease;
+  }
+  
+  details:hover {
+    color: gray;
+  }
+  
+  details[open] {
+    padding: 1em;
+    padding-bottom: 0;
+  }
+  
+  summary.menu {
+    font-size: larger;
+    margin: -0.5em -0.5em 0;
+    padding: 0.5em;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  details[open] summary {
+    border-bottom: 1px solid #aaa;
+    margin-bottom: 0.5em;
+  }
+  
+  .crumbs ul {
+    list-style-type: none;
+    padding-left: 0em;
+  }
+  
+  .crumb {
+    display: inline-block;
+    color: whitesmoke;
+  }
+  
+  .crumb:not(:first-child) {
+    display: inline-block;
+    margin-left: 1em;
+  }
+  
+  /* ignore the following (tbh idk what it even does yet) */
+  
+  .crumb a::after {
+    display: inline-block;
+    color: red;
+    font-size: 80%;
+    font-weight: bold;
+    padding: 0 3px;
+  }

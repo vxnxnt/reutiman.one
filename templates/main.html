@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<link rel="stylesheet" type="text/css" href="/static/css/main.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/details.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/home.css">
+
+	{% block css %}{% endblock %}
+
+	<link rel="icon" href=" /static/media/images/ecorp.webp">
+	<meta charset="utf-8" />
+	<meta name="description" content="Don't mind me, I'm just vibing out here.">
+	<meta name="keywords" content="blog, portfolio, guide">
+	<title>The One and Only Reutiman</title>
+</head>
+
+<body>
+<div class="banner">
+
+	<details class="menu">
+		<summary class="menu">Menu</summary>
+		<nav class="crumbs">
+			<ul>
+				{% block list %}{% endblock %}
+			</ul>
+		</nav>
+	</details>
+
+{% block body %}{% endblock %}
+
+</div>
+</body>
+</html>
