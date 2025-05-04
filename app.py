@@ -23,9 +23,9 @@ def create_app():
     def index():
         return render_template("pages/index.html", age = get_age())
 
-    @app.route("/blog")
+    @app.route("/homelab")
     def blog():
-        return render_template("pages/blog.html")
+        return render_template("pages/homelab.html")
 
     @app.route("/contact")
     def contact():

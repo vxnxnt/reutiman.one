@@ -2,15 +2,27 @@
 
 {% block list %}
 <li class="crumb">About</li>
-<li class="crumb"><a href="/blog">Blog</a></li>
+<li class="crumb"><a href="/homelab">Homelab</a></li>
 <li class="crumb"><a href="/portfolio">Portfolio</a></li>
 {% endblock %}
 
 {% block body %}
-<figure class="portrait">
-    <img src="../static/media/images/hike2.webp" alt="me irl"  title="me irl" class="portrait">
-    <figcaption class="portrait">Me hiking on the Brocken</figcaption>
-</figure>
+<div class="container">
+    <figure class="portrait">
+        <img src="../static/media/images/hike2.webp" alt="me irl"  title="me irl" class="portrait">
+        <figcaption class="portrait">Me hiking on the Brocken</figcaption>
+    </figure>
+
+    <div class="contact">
+        <h3 class="contact">Contact</h3>
+
+        <ul class="contact">
+            <li>&#128236 <a href="mailto:vincent@reutiman.one">vincent@reutiman.one</a></li>
+            <li><img src="../static/media/images/matrixwhite.webp"> <a href="https://matrix.to/#/@not_ham:matrix.sw1tchbl4d3.com">@not_ham</a></li>
+            <li><img src="../static/media/images/git.webp"> <a href="https://github.com/vxnxnt">@vxnxnt</a></li>
+        </ul>
+    </div>
+</div>
 
 <h2 class="portrait">
     About the Host and the Hosted
@@ -18,15 +30,17 @@
 
 <p>
     Hello there, curious traveler, and welcome to my personal website. I'm a {{ age }} year old Computer Engineering student at the TU Braunschweig. I built this website from scratch,
-    mostly to use as a Blog, Portfolio, and really anything else that sounds useful or fun.<br>As for my name, you can simply call me Vincent for now.<br>
+    mostly to use as a Blog, Portfolio, and really anything else that sounds useful or fun.<br>As for my name, you can simply call me Vincent for now.
+    And if you're interested in my technical abilities then feel free to navigate towards the portfolio page.<br>
     <br>
-    In my free time I enjoy working on IT projects, such as this very website. But I also like reading, playing video games, or being outside and enjoying nature while hiking or canoeing, for example.<br>
+    In my free time I enjoy working on IT projects, such as this very website. But I also like reading, playing video games, or being outside and enjoying nature while hiking or canoeing, for example.
+    I even managed backpacking through the swedish wilderness for a whole week without dying!<br>
+    <br>
+    When I find enough free time, I might even end up writing a few blog entries from time to time. Although my studies are already keeping me plenty busy as it is.<br>
+    <br>
+    If you wish to contact me, you can write me an <a href="mailto:vincent@reutiman.one">Email</a> or send me a message via <a  href="https://matrix.to/#/@not_ham:matrix.sw1tchbl4d3.com">Matrix</a>.
+    I should usually manage to answer with a few hours if I'm not too busy.
+    While you're at it, you can also check me out on <a href="https://github.com/vxnxnt">Github</a> and see my horrible code for yourself.
 </p>
-
-<br><br><br><br><br><br>
-
-<p>
-If you wish to contact me, you can write me an <a href="mailto:vincent@reutiman.one">Email</a> or send me a message via <a  href="https://matrix.to/#/@not_ham:matrix.sw1tchbl4d3.com">Matrix</a>.<br>
-While you're at it, you can also check me out on <a href="https://github.com/vxnxnt">Github</a> and see my horrible code for yourself.
-</p>
+<br>
 {% endblock %}

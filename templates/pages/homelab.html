@@ -1,0 +1,47 @@
+{% extends 'main.html' %}
+
+{% block list %}
+<li class="crumb"><a href="/">About</a></li>
+<li class="crumb">Homelab</li>
+<li class="crumb"><a href="/portfolio">Portfolio</a></li>
+{% endblock %}
+
+{% block body %}
+
+<figure class="homelab">
+    <img src="../static/media/images/homelab.webp" alt="My homelab rack"  title="My homelab rack" class="homelab">
+    <figcaption class="homelab">My homelab rack</figcaption>
+</figure>
+
+<h2 class="heading">
+    My Homelab
+</h2>
+
+<h3 class="heading">
+    The Hardware
+</h3>
+
+<ul class="homelab">
+    <li>HP ProCurve 1810G-24</li>
+    <li>HP ProLiant DL380p G8 with 128GB ECC RAM and two Intel Xeon E5-2670</li>
+    <li>HP EliteDesk 800 G3 Mini with 8GB RAM and an Intel Core i3-7100</li>
+    <li>Lenovo ThinkCentre m710s with 64GB RAM and an Intel Core i5-7400</li>
+</ul>
+
+<h3 class="heading">
+    The Software
+</h3>
+
+<p>Both the ProLiant and Thinkcentre are running in a ProxmoxVE Cluster with various containers and VMs.
+   At the same time, I have the EliteDesk running a Proxmox Backup Server.
+   My Homelab is connected via a Wireguard tunnel to my VPS, which is how I make most of my services public.<br>
+   <br>
+   For the moment, my Thinkcentre is only responsible for running Jellyfin with an Intel iGPU for Hardware Transcoding.
+   Perhaps in the future it will also run a TrueNAS VM.
+   In contrast, everything else I host tends to run on my DL380p, which includes services such as Pi-hole and Unbound for DNS.
+   Additionally, I also host a PaperMC and Factorio server to play with my friends and a Bitwarden server to host my passwords.
+   And last but not least, I have a Debian VM responsible for hosting a CUPS print server to share my old Brother HL-2030 USB printer with the rest of my LAN.<br>
+   <br>
+   In the near future I hope to get a second server to run TrueNAS with a RAID-Z1 pool on bare metal for Jellyfin.
+</p>
+{% endblock %}
