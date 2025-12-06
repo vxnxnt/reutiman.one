@@ -1,0 +1,21 @@
+div.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-bottom: 3em;
+}
+
+div.gallery-item {
+  margin: 0.5em;
+  width: 20em;
+  transition: 100ms ease-out;
+}
+
+div.gallery-item:hover {
+  transform: scale(1.05);
+}
+
+div.gallery-item img {
+  width: 100%;
+  height: auto;
+}

@@ -4,13 +4,14 @@
 <li class="crumb">About</li>
 <li class="crumb"><a href="/homelab">Homelab</a></li>
 <li class="crumb"><a href="/portfolio">Portfolio</a></li>
+<li class="crumb"><a href="/photography">Photography</a></li>
 {% endblock %}
 
 {% block body %}
 <div class="container">
     <figure class="portrait">
-        <img src="../static/media/images/hike2.webp" alt="me irl"  title="me irl" class="portrait">
-        <figcaption class="portrait">Me hiking on the Brocken</figcaption>
+        <img src="../static/media/images/pfp.webp" alt="me irl"  title="me irl" class="portrait">
+        <figcaption class="portrait">This is me sitting by the Oker</figcaption>
     </figure>
 
     <div class="contact">
@@ -19,9 +20,16 @@
         <ul class="contact">
             <li>&#128236 <a href="mailto:vincent@reutiman.one">vincent@reutiman.one</a></li>
             <li><img src="../static/media/images/matrixwhite.webp"> <a href="https://matrix.to/#/@not_ham:matrix.sw1tchbl4d3.com">@not_ham</a></li>
-            <li><img src="../static/media/images/git.webp"> <a href="https://github.com/vxnxnt">@vxnxnt</a></li>
         </ul>
     </div>
+    <div class="contact">
+        <h3 class="contact">Links</h3>
+        <ul class="contact">
+            <li><img src="../static/media/images/kuma.svg" width="16" height="16"> <a href="https://status.reutiman.one">Uptime Kuma</a></li>
+            <li><img src="../static/media/images/git.webp"> <a href="https://github.com/vxnxnt">github.com/vxnxnt</a></li>
+        </ul>
+    </div>
+
 </div>
 
 <h2 class="portrait">
@@ -34,13 +42,14 @@
     And if you're interested in my technical abilities then feel free to navigate towards the portfolio page.<br>
     <br>
     In my free time I enjoy working on IT projects, such as this very website. But I also like reading, playing video games, or being outside and enjoying nature while hiking or canoeing, for example.
-    I even managed backpacking through the swedish wilderness for a whole week without dying!<br>
-    <br>
     When I find enough free time, I might even end up writing a few blog entries from time to time. Although my studies are already keeping me plenty busy as it is.<br>
     <br>
-    If you wish to contact me, you can write me an <a href="mailto:vincent@reutiman.one">Email</a> or send me a message via <a  href="https://matrix.to/#/@not_ham:matrix.sw1tchbl4d3.com">Matrix</a>.
-    I should usually manage to answer with a few hours if I'm not too busy.
-    While you're at it, you can also check me out on <a href="https://github.com/vxnxnt">Github</a> and see my horrible code for yourself.
+    If you want to glance at the uptime (or downtime (hopefully not)) of any of my services, you can head over to <a href="https://status.reutiman.one">status.reutiman.one</a>.
+    The services shown there are only the ones that are currently publicly reachable. Private ones, such as my DNS server or Stirling-PDF, aren't listed.<br>
+    <br>
+    If you want to contact me, you can just shoot me an <a href="mailto:vincent@reutiman.one">Email</a> or send me a message via <a  href="https://matrix.to/#/@not_ham:matrix.sw1tchbl4d3.com">Matrix</a>.
+    I should usually manage to respond within a few hours if I'm not too busy.
+    While you're at it, feel free to check out my <a href="https://github.com/vxnxnt">Github profile</a> and see my horrible code for yourself ;)
 </p>
 <br>
 {% endblock %}

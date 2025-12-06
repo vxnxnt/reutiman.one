@@ -1,0 +1,43 @@
+{% extends 'main.html' %}
+
+{% block list %}
+<li class="crumb"><a href="/">About</a></li>
+<li class="crumb"><a href="/homelab">Homelab</a></li>
+<li class="crumb"><a href="/portfolio">Portfolio</a></li>
+<li class="crumb">Photography</li>
+{% endblock %}
+
+{% block body %}
+<h2 class="heading">
+    The Analog Gallery
+</h2>
+
+<p>
+  This is an active Work in Progress, more photos and a better design are on the way...<br>
+  I'm also currently in the process of rescanning all my film and adjusting the color balance, contrast and saturation on all pictures.
+  As for my gear, I'm using a Praktica Nova B and Edixa Reflex B-V with the Edixagon f/2 50mm, Pentacon f/2.8 135mm and Tokina f/5.6 300mm lenses.
+</p>
+<br>
+<div xmlns:cc="https://creativecommons.org/ns#">
+  <p class="center">
+    <em>
+      All work on this page, by
+      <a property="cc:attributionName"
+        rel="cc:attributionURL"
+        href="https://reutiman.one/">Vincent Reutiman
+      </a>
+      is licensed under <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>.
+    </em>
+  </p>
+</div>
+
+<div class="gallery">
+   {% for image in gallery %}
+      <div class="gallery-item">
+        <a target="_blank" href="../static/media/gallery/{{image.replace(".optimized.webp", ".jpg")}}">
+          <img src="../static/media/gallery/{{image}}" loading= "lazy">
+        </a>
+      </div>
+    {% endfor %}
+</div>
+{% endblock %}

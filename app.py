@@ -1,5 +1,6 @@
 from flask import Flask, render_template, make_response, abort
-import os, random
+import os, random, subprocess
+from random import shuffle
 from datetime import date
 
 listofffiles = [i[:-5] if i.endswith(".html") else i for i in os.listdir("templates")]
@@ -24,7 +25,7 @@ def create_app():
         return render_template("pages/index.html", age = get_age())
 
     @app.route("/homelab")
-    def blog():
+    def homelab():
         return render_template("pages/homelab.html")
 
     @app.route("/contact")
@@ -32,8 +33,12 @@ def create_app():
         return render_template("pages/contact.html")
 
     @app.route("/portfolio")
-    def other():
+    def portfolio():
         return render_template("pages/portfolio.html")
+        
+    @app.route("/photography")
+    def photography():
+        return render_template("pages/photography.html", gallery = get_images())
 
     return app
 
@@ -44,3 +49,22 @@ def get_age():
     born = date(2004, 2, 23)
     age = today.year - born.year - ((today.month, today.day) < (born.month, born.day))
     return age
+
+def get_images():
+    gallery = []
+    path = "./static/media/gallery/"
+    for image in os.listdir(path):
+        if image.endswith(".optimized.webp"):
+            gallery.append(image)
+
+        elif image.endswith(".jpg"):
+            filename, extension = os.path.splitext(image)
+            thumbnail = image.replace(".jpg", ".optimized.webp")
+            thumbnail_path = "".join([path, thumbnail])
+            if not os.path.isfile(thumbnail_path):
+                image_path = "".join([path, image])
+                subprocess.run(["convert", image_path, "-resize", "600x400", "-rotate", "180", thumbnail_path])
+                gallery.append(thumbnail)
+
+    shuffle(gallery)
+    return gallery
