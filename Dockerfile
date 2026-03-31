@@ -11,3 +11,4 @@ RUN pip3 install -r requirements.txt
 CMD ["uwsgi", "--master","--http-socket", "0.0.0.0:33332", "--wsgi-file", "start.py"]
 
 EXPOSE 33332
+

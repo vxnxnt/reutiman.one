@@ -1,6 +1,7 @@
 body {
   color: whitesmoke;
-  font-family: sans-serif;
+  font-family: monospace;
+  font-size: larger;
   margin: 0;
   background-image: url("/static/media/images/ostsee.webp");
   background-attachment: fixed;

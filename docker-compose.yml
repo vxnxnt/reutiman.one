@@ -1,0 +1,37 @@
+services:
+  uwsgi:
+    build: .
+    container_name: uwsgi
+    restart: always
+    volumes:
+      - ./templates:/var/app/templates:Z
+      - ./static:/var/app/static:Z
+    ports:
+      - 127.0.0.1:33332:33332
+
+  anubis:
+    restart: always
+    image: ghcr.io/techarohq/anubis:latest
+    container_name: anubis
+    environment:
+      COOKIE_SECURE: "true"
+      SERVE_ROBOTS_TXT: "true"
+      COOKIE_DOMAIN: "reutiman.one"
+      TARGET: "http://uwsgi:33332"
+      REDIRECT_DOMAINS: "reutiman.one,www.reutiman.one"
+      POLICY_FNAME: "/data/cfg/botPolicy.yaml"
+      ED25519_PRIVATE_KEY_HEX_FILE: "/data/cfg/anubis_key.priv"
+      OG_PASSTHROUGH: "true"
+      OG_EXPIRY_TIME: "1h"
+    healthcheck:
+      test: ["CMD", "anubis", "--healthcheck"]
+      interval: 5s
+      timeout: 30s
+      retries: 5
+      start_period: 500ms
+    ports:
+      - 127.0.0.1:8923:8923
+    volumes:
+      - "./botPolicy.yaml:/data/cfg/botPolicy.yaml:ro"
+      - "./anubis_key.priv:/data/cfg/anubis_key.priv:ro"
+

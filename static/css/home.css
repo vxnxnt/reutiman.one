@@ -47,3 +47,20 @@ ul.home {
 ul.sublist {
   list-style-type: "↳ ";
 }
+
+div.badge {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  padding-bottom: 1em;
+  margin-top: 3em;
+  margin-left: 2.5em;
+}
+
+img.badge {
+  margin-left: 0.5em;
+}
+
+img.badge:hover {
+  transform: scale(1.05);
+}
