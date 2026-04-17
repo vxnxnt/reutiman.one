@@ -5,6 +5,9 @@ from datetime import date
 
 listofffiles = [i[:-5] if i.endswith(".html") else i for i in os.listdir("templates")]
 
+analog_path = "static/media/gallery/analog/"
+digital_path = "static/media/gallery/digital/"
+
 def create_app():
     app = Flask(__name__)
 
@@ -38,11 +41,9 @@ def create_app():
         
     @app.route("/photography")
     def photography():
-        return render_template("pages/photography.html", gallery = get_images())
+        return render_template("pages/photography.html", analog_gallery = get_images(analog_path), digital_gallery = get_images(digital_path))
 
     return app
-
-# create_app().run(debug=True)
 
 def get_age():
     today = date.today()
@@ -50,9 +51,8 @@ def get_age():
     age = today.year - born.year - ((today.month, today.day) < (born.month, born.day))
     return age
 
-def get_images():
+def get_images(path):
     gallery = []
-    path = "./static/media/gallery/"
     for image in os.listdir(path):
         if image.endswith(".optimized.webp"):
             gallery.append(image)
@@ -63,7 +63,7 @@ def get_images():
             thumbnail_path = "".join([path, thumbnail])
             if not os.path.isfile(thumbnail_path):
                 image_path = "".join([path, image])
-                subprocess.run(["convert", image_path, "-resize", "600x400", "-rotate", "180", thumbnail_path])
+                subprocess.run(["convert", image_path, "-resize", "600x400", thumbnail_path])
                 gallery.append(thumbnail)
 
     shuffle(gallery)

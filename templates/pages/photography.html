@@ -40,10 +40,10 @@
   <br>
 
   <div class="gallery">
-    {% for image in gallery %}
+    {% for image in analog_gallery %}
         <div class="gallery-item">
-          <a target="_blank" href="../static/media/gallery/{{image.replace(".optimized.webp", ".jpg")}}">
-            <img src="../static/media/gallery/{{image}}" loading= "lazy">
+          <a target="_blank" href="../static/media/gallery/analog/{{image.replace(".optimized.webp", ".jpg")}}">
+            <img src="../static/media/gallery/analog/{{image}}" loading= "lazy">
           </a>
         </div>
       {% endfor %}
@@ -75,7 +75,17 @@
   </div>
   <br>
 
-  <p><em>Coming Soon...</em></p>
+  <div class="gallery">
+    {% for image in digital_gallery %}
+        <div class="gallery-item">
+          <a target="_blank" href="../static/media/gallery/digital/{{image.replace(".optimized.webp", ".jpg")}}">
+            <img src="../static/media/gallery/digital/{{image}}" loading= "lazy">
+          </a>
+        </div>
+    {% endfor %}
+  </div>
+</details>
+<br><br>
 </details>
 
 {% endblock %}
