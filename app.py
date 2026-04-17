@@ -57,14 +57,20 @@ def get_images(path):
         if image.endswith(".optimized.webp"):
             gallery.append(image)
 
-        elif image.endswith(".jpg"):
-            filename, extension = os.path.splitext(image)
-            thumbnail = image.replace(".jpg", ".optimized.webp")
-            thumbnail_path = "".join([path, thumbnail])
-            if not os.path.isfile(thumbnail_path):
-                image_path = "".join([path, image])
-                subprocess.run(["convert", image_path, "-resize", "600x400", thumbnail_path])
-                gallery.append(thumbnail)
+        else:
+            if image.endswith((".JPG", ".jpeg")):
+                filename, extension = os.path.splitext(image)
+                new_file_extension = "".join([filename, ".jpg"])
+                os.rename(os.path.join(path, image), os.path.join(path, new_file_extension))
+                image = new_file_extension
+
+            if image.endswith(".jpg"):
+                thumbnail = image.replace(".jpg", ".optimized.webp")
+                thumbnail_path = os.path.join(path, thumbnail)
+                if not os.path.isfile(thumbnail_path):
+                    image_path = os.path.join(path, image)
+                    subprocess.run(["convert", image_path, "-resize", "600x400", thumbnail_path])
+                    gallery.append(thumbnail)
 
     shuffle(gallery)
     return gallery
