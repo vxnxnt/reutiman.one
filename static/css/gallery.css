@@ -8,15 +8,29 @@ details.gallery {
     transition: 200ms ease;
 }
 
-div.gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding-bottom: 3em;
+@media (orientation: landscape) {
+  div.gallery {
+    -webkit-column-count: 3;  /* Chrome, Safari, Opera */
+    -moz-column-count: 3;     /* Firefox */
+    column-count: 3;
+    justify-content: center;
+    padding-bottom: 3em;
+  }
+}
+
+@media (orientation: portrait) {
+  div.gallery {
+    -webkit-column-count: 2;  /* Chrome, Safari, Opera */
+    -moz-column-count: 2;     /* Firefox */
+    column-count: 2;
+    justify-content: center;
+    padding-bottom: 3em;
+  }
 }
 
 div.gallery-item {
   margin: 0.5em;
+  margin-right: -0.5em;
   width: 20em;
   transition: 100ms ease-out;
 }
