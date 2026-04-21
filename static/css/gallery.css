@@ -8,7 +8,7 @@ details.gallery {
     transition: 200ms ease;
 }
 
-@media (orientation: landscape) {
+@media screen and (width >= 110em) {
   div.gallery {
     -webkit-column-count: 3;  /* Chrome, Safari, Opera */
     -moz-column-count: 3;     /* Firefox */
@@ -18,7 +18,7 @@ details.gallery {
   }
 }
 
-@media (orientation: portrait) {
+@media screen and (width < 110em) {
   div.gallery {
     -webkit-column-count: 2;  /* Chrome, Safari, Opera */
     -moz-column-count: 2;     /* Firefox */
